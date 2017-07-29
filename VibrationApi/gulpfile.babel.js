@@ -11,7 +11,7 @@ import del from 'del';
 gulp.task('default', ['copy'], () => gulp.start('del'));
 
 gulp.task('del', ['usemin'], () => {
-    del(['dist']);
+    del(['dist/js']);
 });
 
 gulp.task('copy', ['clean'], () => {
@@ -20,7 +20,7 @@ gulp.task('copy', ['clean'], () => {
 });
 
 gulp.task('clean', () => {
-    return gulp.src(['./dist', 'index.html'])
+    return gulp.src('dist')
 		.pipe(clean({force: true}));
 });
 
@@ -35,5 +35,5 @@ gulp.task('usemin', function() {
                 ]}), 
             uglify() ]
     }))
-    .pipe(gulp.dest(''));
+    .pipe(gulp.dest('dist'));
 });

@@ -1,181 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Vibration API</title>
-    <meta charset="UTF-8">
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
-
-    <style>
-      a {
-        color: #2c3e50;
-      }
-
-      @media screen and (min-width: 480px) {
-        .botoes button{
-          margin-right: 1%;
-          width: 24%;
-        } 
-      }
-
-      @media screen and (max-width: 480px) {
-        .container{
-          padding-left: 25px;
-          padding-right: 25px;
-        } 
-
-        .btn{
-          width: 100%;
-          margin-bottom: 2%;
-        }
-      }
-    </style>
+    <title>Vibration API</title> <meta charset="UTF-8"> <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/> <link rel="icon" href="favicon.ico" type="image/x-icon"> <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css"> <style>a{color:#2c3e50}@media screen and (min-width:480px){.botoes button{margin-right:1%;width:24%}}@media screen and (max-width:480px){.container{padding-left:25px;padding-right:25px}.btn{width:100%;margin-bottom:2%}}</style>
   </head>
   <body>
-    <br/>
-
-    <div class="container">
-
-      <div class="row">
-        <div class="jumbotron">
-          <h1>Vibration</h1>
-          <p>API para vibração de dispositivos móveis.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="alert alert-dismissible alert-warning hidden">
-          <h4>
-            <b/>Oops!</b>
-          </h4>
-          <p></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="botoes">
-          <button id="jamesBond" class="col-md-3 btn btn-lg btn-success">James Bond 007</button>
-          <button id="starWars" class="col-md-3 btn btn-lg btn-primary">Star Wars Imperial March</button>
-          <button id="superMario" class="col-md-3 btn btn-lg btn-danger">Super Mario Theme Intro</button>
-          <button id="sos" class="col-md-3 btn btn-lg btn-warning">Morse Code SOS</button>        
-        </div>
-      </div>
-    </div>
-    
-    <br/>
-
-    <p class="text-center">
-      <a href="https://github.com/allbarbos">
-        <svg height="32" version="1.1" viewBox="0 0 16 16" width="32">
-          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-        <br/>
-        AllBarbos
-      </a>
-    </p>
+    <br/> <div class="container"> <div class="row"> <div class="jumbotron"> <h1>Vibration</h1> <p>API para vibração de dispositivos móveis.</p></div></div><div class="row"> <div class="alert alert-dismissible alert-warning hidden"> <h4> <b/>Oops!</b> </h4> <p></p></div></div><div class="row"> <div class="botoes"> <button id="jamesBond" class="col-md-3 btn btn-lg btn-success">James Bond 007</button> <button id="starWars" class="col-md-3 btn btn-lg btn-primary">Star Wars Imperial March</button> <button id="superMario" class="col-md-3 btn btn-lg btn-danger">Super Mario Theme Intro</button> <button id="sos" class="col-md-3 btn btn-lg btn-warning">Morse Code SOS</button> </div></div></div><br/> <p class="text-center"> <a href="https://github.com/allbarbos"> <svg height="32" version="1.1" viewBox="0 0 16 16" width="32"> <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path> </svg> <br/> AllBarbos </a> </p>
 
     <script>
-
-      var isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
-
-      function execVibra(tipo) {
-        switch (tipo) {
-          case 'jamesBond':
-            navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);
-            console.log('Vibra jamesBond');
-            break;
-        
-          case 'starWars':
-            navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
-            console.log('Vibra starWars');
-            break;
-        
-          case 'superMario':
-            navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
-            console.log('Vibra superMario');
-            break;
-        
-          case 'sos':
-            navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
-            console.log('Vibra sos');
-            break;
-        }
-      }
-
-      function vibra(tipo){
-          navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-
-          if (navigator.vibrate && isMobile) {
-            
-            execVibra(tipo)
-            return;
-
-          } else {
-
-            (function() {
-
-              if (!navigator.mozVibrate && !navigator.vibrate) {
-                var s = document.createElement('style');
-                s.innerHTML = 'body.buzz {animation: buzz 100ms infinite;-webkit-animation: buzz 100ms infinite;}@keyframes buzz {0% {margin: 10px;}50% {margin: 12px 12px;}75% {margin: 10px;}100% {margin: 8px 8px;}}@-webkit-keyframes buzz {0% {margin: 10px;}50% {margin: 12px 12px;}75% {margin: 10px;}100% {margin: 8px 8px;}}';
-                document.getElementsByTagName('head')[0].appendChild(s);
-                navigator.mozVibrate = function(duration) {
-                  if (!duration) {
-                    clearTimeout(navigator.mozVibrate.current);
-                    navigator.mozVibrate.duration = [];
-                    navigator.mozVibrate.stop();
-                  }
-                  if (typeof duration === 'object' && duration.length) {
-                  } else {
-                    duration = [duration];
-                  }
-                  navigator.mozVibrate.count = 0;
-                  navigator.mozVibrate.duration = duration;
-                  navigator.mozVibrate.buzz();
-                };
-                navigator.mozVibrate.buzz = function() {
-                  if (navigator.mozVibrate.current) {
-                    clearTimeout(navigator.mozVibrate.current);
-                  }
-                  document.body.className += ' buzz';
-                  document.title = '*buzz* ' + document.title;
-                  navigator.mozVibrate.current = window.setTimeout(
-                    navigator.mozVibrate.stop,
-                    navigator.mozVibrate.duration[navigator.mozVibrate.count]
-                  );
-                };
-                navigator.mozVibrate.stop = function() {
-                  if (navigator.mozVibrate.current) {
-                    clearTimeout(navigator.mozVibrate.current);
-                  }
-                  document.body.className = document.body.className.replace(' buzz', '');
-                  document.title = document.title.replace('*buzz* ', '');
-                  if (navigator.mozVibrate.duration[navigator.mozVibrate.count+1]) {
-                    navigator.mozVibrate.current = window.setTimeout(
-                      navigator.mozVibrate.buzz,
-                      navigator.mozVibrate.duration[navigator.mozVibrate.count+1]
-                    );
-                  }
-                  navigator.mozVibrate.count += 2;
-                };
-                navigator.vibrate = navigator.mozVibrate;
-              }
-
-              })();
-
-              execVibra(tipo);
-          }
-
-          document.querySelector('.alert-warning').classList.remove('hidden');
-          document.querySelector('.alert-warning p').innerText = 'Este navegador não tem suporte a vibração';
-        }     
-      
-      document.querySelector('#jamesBond').addEventListener('click', function(){ vibra('jamesBond') })
-      document.querySelector('#starWars').addEventListener('click', function(){ vibra('starWars') })
-      document.querySelector('#superMario').addEventListener('click', function(){ vibra('superMario') })
-      document.querySelector('#sos').addEventListener('click', function(){ vibra('sos') })
-
+      var isMobile=(/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);function vibra(tipo){navigator.vibrate=navigator.vibrate||navigator.webkitVibrate||navigator.mozVibrate||navigator.msVibrate;if(navigator.vibrate&&isMobile){switch(tipo){case 'jamesBond':navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);break;case 'starWars':navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);break;case 'superMario':navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);break;case 'sos':navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);break}
+return}
+document.querySelector('.alert-warning').classList.remove('hidden');document.querySelector('.alert-warning p').innerText='Este navegador não tem suporte a vibração'}
+document.querySelector('#jamesBond').addEventListener('click',function(){vibra('jamesBond')})
+document.querySelector('#starWars').addEventListener('click',function(){vibra('starWars')})
+document.querySelector('#superMario').addEventListener('click',function(){vibra('superMario')})
+document.querySelector('#sos').addEventListener('click',function(){vibra('sos')})
     </script>
   </body>
 </html>

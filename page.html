@@ -80,34 +80,91 @@
 
       var isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
 
+      function execVibra(tipo) {
+        switch (tipo) {
+          case 'jamesBond':
+            navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);
+            console.log('Vibra jamesBond');
+            break;
+        
+          case 'starWars':
+            navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+            console.log('Vibra starWars');
+            break;
+        
+          case 'superMario':
+            navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
+            console.log('Vibra superMario');
+            break;
+        
+          case 'sos':
+            navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
+            console.log('Vibra sos');
+            break;
+        }
+      }
+
       function vibra(tipo){
           navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
           if (navigator.vibrate && isMobile) {
-
-            switch (tipo) {
-              case 'jamesBond':
-                navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);
-                console.log('Vibra jamesBond');
-                break;
             
-              case 'starWars':
-                navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
-                console.log('Vibra starWars');
-                break;
-            
-              case 'superMario':
-                navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
-                console.log('Vibra superMario');
-                break;
-            
-              case 'sos':
-                navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
-                console.log('Vibra sos');
-                break;
-            }
-
+            execVibra(tipo)
             return;
+
+          } else {
+
+            (function() {
+
+              if (!navigator.mozVibrate && !navigator.vibrate) {
+                var s = document.createElement('style');
+                s.innerHTML = 'body.buzz {animation: buzz 100ms infinite;-webkit-animation: buzz 100ms infinite;}@keyframes buzz {0% {margin: 10px;}50% {margin: 12px 12px;}75% {margin: 10px;}100% {margin: 8px 8px;}}@-webkit-keyframes buzz {0% {margin: 10px;}50% {margin: 12px 12px;}75% {margin: 10px;}100% {margin: 8px 8px;}}';
+                document.getElementsByTagName('head')[0].appendChild(s);
+                navigator.mozVibrate = function(duration) {
+                  if (!duration) {
+                    clearTimeout(navigator.mozVibrate.current);
+                    navigator.mozVibrate.duration = [];
+                    navigator.mozVibrate.stop();
+                  }
+                  if (typeof duration === 'object' && duration.length) {
+                  } else {
+                    duration = [duration];
+                  }
+                  navigator.mozVibrate.count = 0;
+                  navigator.mozVibrate.duration = duration;
+                  navigator.mozVibrate.buzz();
+                };
+                navigator.mozVibrate.buzz = function() {
+                  if (navigator.mozVibrate.current) {
+                    clearTimeout(navigator.mozVibrate.current);
+                  }
+                  document.body.className += ' buzz';
+                  document.title = '*buzz* ' + document.title;
+                  navigator.mozVibrate.current = window.setTimeout(
+                    navigator.mozVibrate.stop,
+                    navigator.mozVibrate.duration[navigator.mozVibrate.count]
+                  );
+                };
+                navigator.mozVibrate.stop = function() {
+                  if (navigator.mozVibrate.current) {
+                    clearTimeout(navigator.mozVibrate.current);
+                  }
+                  document.body.className = document.body.className.replace(' buzz', '');
+                  document.title = document.title.replace('*buzz* ', '');
+                  if (navigator.mozVibrate.duration[navigator.mozVibrate.count+1]) {
+                    navigator.mozVibrate.current = window.setTimeout(
+                      navigator.mozVibrate.buzz,
+                      navigator.mozVibrate.duration[navigator.mozVibrate.count+1]
+                    );
+                  }
+                  navigator.mozVibrate.count += 2;
+                };
+                navigator.vibrate = navigator.mozVibrate;
+              }
+
+              })();
+
+              execVibra(tipo);
           }
 
           document.querySelector('.alert-warning').classList.remove('hidden');

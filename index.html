@@ -1,11 +1,3 @@
-<!--
-  https://www.sitepoint.com/use-html5-vibration-api
-  https://illyism.com/journal/vibrate-mobile-phone-web-vibration-api
-  https://developer.mozilla.org/pt-BR/docs/Web/API/Navigator/vibrate
-
-  https://github.com/NascHQ/vibe.js
-  https://www.youtube.com/watch?v=WQNRe7DRhZQ | http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api
- -->
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -13,30 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+
+    <style>
+      @media screen and (min-width: 480px) {
+        .botoes button{
+          margin-right: 1%;
+          width: 24%;
+        } 
+      }
+    </style>
   </head>
   <body>
+    <br/>
 
+    <div class="container">
+      <div class="row">
+        <div class="jumbotron">
+          <h1>Vibration</h1>
+          <p>API para vibração de dispositivos móveis.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="botoes">
+          <button id="jamesBond" class="col-md-3 btn-lg btn-success">James Bond 007</button>
+          <button id="starWars" class="col-md-3 btn-lg btn-primary">Star Wars Imperial March</button>
+          <button id="superMario" class="col-md-3 btn-lg btn-danger">Super Mario Theme Intro</button>
+          <button id="sos" class="col-md-3 btn-lg btn-warning">Morse Code SOS</button>        
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <div class="alert alert-dismissible alert-warning hidden">
+          <h4>
+            <b/>Warning!</b>
+          </h4>
+          <p></p>
+        </div>
+      </div>
+    </div>
     <script>
 
-      if((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)) {
+      var isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
 
-        // enable vibration support
-        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+      function vibra(tipo){
+          navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
-        if (navigator.vibrate) {
-          //Super Mario Theme Intro
-          navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
+          if (navigator.vibrate && isMobile) {
 
-          //James Bond 007
-          navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);
+            switch (tipo) {
+              case 'jamesBond':
+                navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);
+                console.log('Vibra jamesBond');
+                break;
+            
+              case 'starWars':
+                navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+                console.log('Vibra starWars');
+                break;
+            
+              case 'superMario':
+                navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
+                console.log('Vibra superMario');
+                break;
+            
+              case 'sos':
+                navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
+                console.log('Vibra sos');
+                break;
+            }
 
-          //Star Wars Imperial March
-          navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+            return;
+          }
 
-          //Morse Code SOS
-          navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
-        }
-      }
+          document.querySelector('.alert-warning').classList.remove('hidden');
+          document.querySelector('.alert-warning p').innerText = 'Este navegador não tem suporte a vibração';
+        }     
+      
+      document.querySelector('#jamesBond').addEventListener('click', function(){ vibra('jamesBond') })
+      document.querySelector('#starWars').addEventListener('click', function(){ vibra('starWars') })
+      document.querySelector('#superMario').addEventListener('click', function(){ vibra('superMario') })
+      document.querySelector('#sos').addEventListener('click', function(){ vibra('sos') })
+
     </script>
   </body>
 </html>

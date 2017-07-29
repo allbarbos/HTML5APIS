@@ -1,5 +1,5 @@
-# Vibration  
-###### API para vibração de dispositivos móveis
+# Vibration API  
+###### Vibração de dispositivos móveis
 
 
 **Demo**  

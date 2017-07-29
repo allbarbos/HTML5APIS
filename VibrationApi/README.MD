@@ -3,4 +3,4 @@
 
 
 **Demo**  
-https://allbarbos.github.io/html5apis/VibrationApi
+https://allbarbos.github.io/html5apis/VibrationApi/dist

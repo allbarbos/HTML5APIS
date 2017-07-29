@@ -1,0 +1,30 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "Automação e performance",
+  "main": "gulpfile.js",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "author": "Allan Barbosa",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-minify-cshtml": "0.0.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-usemin": "^0.3.28"
+  },
+  "dependencies": {
+    "del": "^3.0.0"
+  }
+}

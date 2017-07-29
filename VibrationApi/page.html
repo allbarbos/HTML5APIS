@@ -1,0 +1,42 @@
+<!--
+  https://www.sitepoint.com/use-html5-vibration-api
+  https://illyism.com/journal/vibrate-mobile-phone-web-vibration-api
+  https://developer.mozilla.org/pt-BR/docs/Web/API/Navigator/vibrate
+
+  https://github.com/NascHQ/vibe.js
+  https://www.youtube.com/watch?v=WQNRe7DRhZQ | http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api
+ -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Vibration API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+
+    <script>
+
+      if((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)) {
+
+        // enable vibration support
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+        if (navigator.vibrate) {
+          //Super Mario Theme Intro
+          navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
+
+          //James Bond 007
+          navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25,75,125,75,25,75,125,100,100]);
+
+          //Star Wars Imperial March
+          navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+
+          //Morse Code SOS
+          navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
+        }
+      }
+    </script>
+  </body>
+</html>

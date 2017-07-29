@@ -3,4 +3,4 @@
 
 
 **Demo**  
-https://allbarbos.github.io/html5apis/PageVisibilityApi
+https://allbarbos.github.io/html5apis/PageVisibilityApi/dist

@@ -11,7 +11,7 @@ import del from 'del';
 gulp.task('default', ['copy'], () => gulp.start('del'));
 
 gulp.task('del', ['usemin'], () => {
-    del(['dist']);
+    del(['dist/js']);
 });
 
 gulp.task('copy', ['clean'], () => {
@@ -20,12 +20,12 @@ gulp.task('copy', ['clean'], () => {
 });
 
 gulp.task('clean', () => {
-    return gulp.src(['./dist', 'index.html', 'favicon.ico','paused.png','playing.png','video.mp4',])
+    return gulp.src('dist')
 		.pipe(clean({force: true}));
 });
 
 gulp.task('usemin', function() {
-  gulp.src('dist/*.html')
+  return gulp.src('dist/*.html')
     .pipe(usemin({
         html: [ htmlmin({ collapseWhitespace: true }) ],
       
@@ -35,8 +35,5 @@ gulp.task('usemin', function() {
                 ]}), 
             uglify() ]
     }))
-    .pipe(gulp.dest(''));
-
-    return gulp.src(['src/favicon.ico','src/paused.png','src/playing.png','src/video.mp4',])
-		.pipe(gulp.dest('./'));
+    .pipe(gulp.dest('dist'));
 });
